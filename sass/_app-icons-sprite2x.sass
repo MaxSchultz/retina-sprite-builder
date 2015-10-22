@@ -1,0 +1,31 @@
+$envelope2x-x: 0px
+$envelope2x-y: 0px
+$envelope2x-offset-x: 0px
+$envelope2x-offset-y: 0px
+$envelope2x-width: 36px
+$envelope2x-height: 20px
+$envelope2x-total-width: 36px
+$envelope2x-total-height: 20px
+$envelope2x-image: 'sprites/app-icons-sprite2x1422865117.png'
+$envelope2x: 0px 0px 0px 0px 36px 20px 36px 20px 'sprites/app-icons-sprite2x1422865117.png'
+
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
