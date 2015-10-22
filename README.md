@@ -76,4 +76,3 @@ Retina mixin
     @include sprite-image($sprite2x)
     @include sprite-background-size($sprite)
 ```
-# retina-sprite-o-matic
